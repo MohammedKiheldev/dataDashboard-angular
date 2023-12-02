@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Regal Precious Ape</title>
+    <meta property="og:title" content="Regal Precious Ape" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/4/w3.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+
+      <div class="home-container">
+        <div class="home-header">
+          <header data-thq="thq-navbar" class="home-navbar-interactive">
+            <span class="home-logo">Data Dashboard</span>
+            <div data-thq="thq-navbar-nav" class="home-desktop-menu">
+              <nav class="home-links">
+                <span class="home-nav2">
+                  <div class="w3-dropdown-hover">
+                    <button class="w3-button">Graphics
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="w3-dropdown-content w3-bar-block">
+                      <a routerLink="/stackedbarchartprofil"  class="w3-bar-item w3-button">Stacked Bar Chart</a>
+                      <a routerLink="/piechartprofil"  class="w3-bar-item w3-button">Pie Chart</a>
+                      <a routerLink="/linegraphsprofil" class="w3-bar-item w3-button">Line Graphs</a>
+                    </div>
+                  </div>
+                </span>
+                <span routerLink="/datatable" class="home-nav3" >
+                  <button routerLink="/datatableprofil" class="home-login button">Data Table</button>
+                  
+
+                </span>
+                <span routerLink="/fileupload" class="home-nav4"><button routerLink="/fileupload" class="home-login button">Upload File
+                </button></span>
+              </nav>
+              <div class="home-buttons">
+                <button routerLink="/signin" class="home-login button">Log out</button>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div class="home-hero">
+          <div class="home-hero1">
+            <div class="home-container01">
+              
+              <div class="home-btn-group">
+                <label for="fileName">File Name :</label>
+                 <input type="text" id="fileName" [(ngModel)]="fileName" />
+                 <button (click)="loadFileContent()">Upload</button>
+                 <br>
+              </div>
+              <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+                <!-- ... (other HTML code) -->
+
+<!-- ... (other HTML code) -->
+
+<table *ngIf="fileContent">
+  <tbody>
+    <tr *ngFor="let row of fileContentRows; let i = index">
+      <td *ngFor="let cell of row; let j = index">
+        <input type="text" [(ngModel)]="fileContentRows[i][j]" />
+      </td>
+      <td *ngIf="row.length-1 > 0">
+        <button (click)="deleteRow(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="home-btn-group">
+<button (click)="saveToFile()">Save</button>
+<button (click)="downloadCSV()">Download CSV</button>
+  <button (click)="add()">Add</button>
+  <button (click)="addRandomRow()">Add Random Row</button> 
+  <button (click)="undoDelete()">Undo Delete</button>
+
+
+</div>
+
+
+
+<!-- ... (other HTML code) -->
+
+
+<!-- ... (other HTML code) -->
+
+            </div>
+          </div>
+        </div>
+        <div class="home-footer">
+          <footer class="home-footer1">
+            <div class="home-container32">
+              <span class="home-logo2">Data Dashboard</span>
+              <nav class="home-nav1">
+                <span class="home-nav22">Graphics</span>
+                <span class="home-nav32">Data Table</span>
+                <span class="home-nav42">File Upload</span>
+              </nav>
+            </div>
+            <div class="home-separator"></div>
+            <div class="home-container33">
+              <span class="home-text63">
+                © 2023 myCompany, All Rights Reserved.
+              </span>
+              <div class="home-icon-group1">
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
